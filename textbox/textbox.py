@@ -43,7 +43,7 @@ class TextBox(object):
             elif event.key == pg.K_BACKSPACE:
                 if self.buffer:
                     self.buffer.pop()
-            elif event.unicode in ACCEPTED:
+            elif event.unicode in ACCEPTED and event.unicode is not "":
                 self.buffer.append(event.unicode)
         elif event.type == pg.MOUSEBUTTONDOWN and event.button == 1:
             self.active = self.rect.collidepoint(event.pos)
